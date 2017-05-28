@@ -43,8 +43,9 @@ RUN set -ex \
     && sed -i 's/^# en_US.UTF-8 UTF-8$/en_US.UTF-8 UTF-8/g' /etc/locale.gen \
     && locale-gen \
     && update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 \
-    && useradd -ms /bin/bash -d ${AIRFLOW_HOME} airflow \
-    && python -m pip install -U pip \
+    && useradd -ms /bin/bash -d ${AIRFLOW_HOME} airflow
+
+RUN python -m pip install -U pip \
     && pip install Cython \
     && pip install pytz \
     && pip install pyOpenSSL \
