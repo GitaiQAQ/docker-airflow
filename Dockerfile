@@ -24,6 +24,7 @@ RUN set -ex \
         libsasl2-dev \
         libssl-dev \
         libffi-dev \
+	libxslt-dev \
         build-essential \
         libblas-dev \
         liblapack-dev \
